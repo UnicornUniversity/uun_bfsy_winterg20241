@@ -1,12 +1,14 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./App.css";
-import ToDoListOverview from "./ToDoListOverview/ToDoListOverview";
+import Detail from "./Detail/Detail";
 import UserProvider from "./Users/UserProvider";
 
 function App() {
   return (
     <div className="App">
       <UserProvider>
-        <ToDoListOverview />
+        <Detail />
       </UserProvider>
     </div>
   );

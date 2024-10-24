@@ -4,22 +4,28 @@ export const UserContext = createContext();
 
 function UserProvider({ children }) {
   const [loggedInUser, setLoggedInUser] = useState("u1");
+  const userMap = {
+    u1: {
+      id: "u1",
+      name: "křemílek",
+    },
+    u2: {
+      id: "u2",
+      name: "vochomůrka",
+    },
+    u3: {
+      id: "u3",
+      name: "rampušák",
+    },
+    u4: {
+      id: "u4",
+      name: "rákosníčk",
+    },
+  };
 
   const value = {
-    userList: [
-      {
-        id: "u1",
-        name: "křemílek",
-      },
-      {
-        id: "u2",
-        name: "vochomůrka",
-      },
-      {
-        id: "u3",
-        name: "rampušák",
-      },
-    ],
+    userMap,
+    userList: Object.keys(userMap).map((userId) => userMap[userId]),
     loggedInUser,
     setLoggedInUser,
   };
