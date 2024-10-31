@@ -1,0 +1,45 @@
+{
+  "product": "uun_bfsy_winterg20241",
+  "version": "0.1.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "devkit": {
+    "development": {
+      "appBoxLocationUri": "----- VALUE REQUIRED -----",
+      "appDeploymentUri": null,
+      "resourcePoolUri": "----- VALUE REQUIRED -----",
+      "uuAppBoxRegistryBaseUri": "----- VALUE REQUIRED -----",
+      "uuAppLibraryRegistryBaseUri": "----- VALUE REQUIRED -----"
+    }
+  },
+  "docUri": "",
+  "flsUri": "",
+  "slsUri": "",
+  "imageUri": "",
+  "icon": "",
+  "uun_bfsy_winterg20241": {
+    "namespace": "UunBfsyWinterg20241",
+    "sourceUri": "https://cdn.plus4u.net/uun-bfsy-winterg20241/%s/uun_bfsy_winterg20241.min.js",
+    "componentList": [
+      {
+        "code": "UunBfsyWinterg20241.ToDoList.List",
+        "name": "List",
+        "tagList": [
+          "UunBfsyWinterg20241",
+          "ToDoList",
+          "List"
+        ],
+        "docCode": "UunBfsyWinterg20241ToDoListList",
+        "userGuideUri": "",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBfsyWinterg20241.ToDoList.List />"
+      }
+    ]
+  }
+}

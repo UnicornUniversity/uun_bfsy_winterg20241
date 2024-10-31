@@ -1,0 +1,10 @@
+.item {
+  background: blue;
+  padding: 8px;
+  border: 1px solid blue;
+  margin: 8px;
+}
+
+.item-resolved {
+  background: green;
+}
