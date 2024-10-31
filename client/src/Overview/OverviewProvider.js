@@ -2,11 +2,11 @@ import { useMemo, useState, useContext } from "react";
 
 import { UserContext } from "../Users/UserProvider.js";
 
-import Header from "./Header";
-import ToDoListOverviewList from "./ToDoListOverviewList";
-import Toolbar from "./Toolbar";
+import Header from "./Header.js";
+import ToDoListOverviewList from "./OverviewList.js";
+import Toolbar from "./Toolbar.js";
 
-function ToDoListOverviewProvider() {
+function OverviewProvider() {
   const [showArchived, setShowArchived] = useState(false);
   const { loggedInUser } = useContext(UserContext);
 
@@ -103,4 +103,4 @@ function ToDoListOverviewProvider() {
   );
 }
 
-export default ToDoListOverviewProvider;
+export default OverviewProvider;

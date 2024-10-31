@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { DetailContext } from "./DetailProvider";
 import { UserContext } from "../Users/UserProvider";
-import UpdateName from "./UpdateName";
+import UpdateNameForm from "./UpdateNameForm";
 
 function Toolbar() {
   const [show, setShow] = useState(false);
@@ -10,7 +10,7 @@ function Toolbar() {
 
   return (
     <div style={{ border: "1px solid grey", margin: "8px", padding: "8px" }}>
-      <UpdateName
+      <UpdateNameForm
         show={show}
         handleClose={() => setShow(false)}
         data={data}

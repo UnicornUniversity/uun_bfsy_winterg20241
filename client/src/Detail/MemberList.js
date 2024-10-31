@@ -1,17 +1,30 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DetailContext } from "./DetailProvider";
 import { UserContext } from "../Users/UserProvider";
+import AddMemberForm from "./AddMemberForm";
 import Member from "./Member";
 
 function MemberList() {
-  const { data } = useContext(DetailContext);
-  const { userMap, loggedInUser } = useContext(UserContext);
+  const { data, handlerMap } = useContext(DetailContext);
+  const { userMap, userList, loggedInUser } = useContext(UserContext);
+  const [show, setShow] = useState(false);
 
   return (
     <div style={{ border: "1px solid grey", margin: "8px", padding: "8px" }}>
+      <AddMemberForm
+        show={show}
+        data={data}
+        userList={userList}
+        handlerMap={handlerMap}
+        handleClose={() => setShow(false)}
+      />
       <div>
         Member List{" "}
-        {data.owner === loggedInUser ? <button>add member</button> : ""}
+        {data.owner === loggedInUser ? (
+          <button onClick={() => setShow(true)}>add member</button>
+        ) : (
+          ""
+        )}
       </div>
       <Member memberId={data.owner} data={userMap[data.owner]} isOwner={true} />
       {data.memberList.map((memberId) => (
@@ -19,6 +32,7 @@ function MemberList() {
           key={memberId}
           memberId={memberId}
           data={userMap[memberId]}
+          handlerMap={handlerMap}
           showRemoveButton={
             loggedInUser === data.owner || memberId === loggedInUser
           }

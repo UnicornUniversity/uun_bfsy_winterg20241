@@ -12,7 +12,7 @@ function Item({ data, handlerMap }) {
         onBlur={() => handlerMap.updateItemName({ id: data.id, name: value })}
       />{" "}
       <button onClick={() => handlerMap.toggleResolveItem({ id: data.id })}>
-        resolve
+        {data.resolved ? "unresolve" : "resolve"}
       </button>
       <button onClick={() => handlerMap.deleteItem({ id: data.id })}>
         delete

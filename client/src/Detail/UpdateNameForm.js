@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-function UpdateName({ show, handleClose, data, handlerMap }) {
+function UpdateNameForm({ show, handleClose, data, handlerMap }) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Form
@@ -40,4 +40,4 @@ function UpdateName({ show, handleClose, data, handlerMap }) {
   );
 }
 
-export default UpdateName;
+export default UpdateNameForm;

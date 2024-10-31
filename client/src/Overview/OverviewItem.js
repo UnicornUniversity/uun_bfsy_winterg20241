@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { UserContext } from "../Users/UserProvider.js";
 
-function ToDoListOverviewItem({ toDoList, handleArchive, handleDelete }) {
+function OverviewItem({ toDoList, handleArchive, handleDelete }) {
   const { loggedInUser } = useContext(UserContext);
 
   return (
@@ -46,4 +46,4 @@ function ToDoListOverviewItem({ toDoList, handleArchive, handleDelete }) {
   );
 }
 
-export default ToDoListOverviewItem;
+export default OverviewItem;
