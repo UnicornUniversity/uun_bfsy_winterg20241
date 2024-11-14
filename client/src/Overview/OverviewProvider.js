@@ -2,7 +2,6 @@ import { useMemo, useState, useContext } from "react";
 
 import { UserContext } from "../Users/UserProvider.js";
 
-import Header from "./Header.js";
 import ToDoListOverviewList from "./OverviewList.js";
 import Toolbar from "./Toolbar.js";
 
@@ -73,27 +72,18 @@ function OverviewProvider() {
   const filteredToDoListList = useMemo(() => {
     if (showArchived) {
       return toDoListOverviewList.filter(
-        (item) =>
-          item.owner === loggedInUser || item.memberList?.includes(loggedInUser)
+        (item) => item.owner === loggedInUser || item.memberList?.includes(loggedInUser),
       );
     } else {
       return toDoListOverviewList.filter(
-        (item) =>
-          item.state === "active" &&
-          (item.owner === loggedInUser ||
-            item.memberList?.includes(loggedInUser))
+        (item) => item.state === "active" && (item.owner === loggedInUser || item.memberList?.includes(loggedInUser)),
       );
     }
   }, [showArchived, toDoListOverviewList, loggedInUser]);
 
   return (
     <>
-      <Header />
-      <Toolbar
-        handleCreate={handleCreate}
-        showArchived={showArchived}
-        setShowArchived={setShowArchived}
-      />
+      <Toolbar handleCreate={handleCreate} showArchived={showArchived} setShowArchived={setShowArchived} />
       <ToDoListOverviewList
         toDoListOverviewList={filteredToDoListList}
         handleArchive={handleArchive}
