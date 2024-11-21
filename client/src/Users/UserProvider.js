@@ -19,7 +19,7 @@ function UserProvider({ children }) {
     },
     u4: {
       id: "u4",
-      name: "rákosníčk",
+      name: "rákosníček",
     },
   };
 
